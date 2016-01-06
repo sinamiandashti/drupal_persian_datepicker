@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Persian Datepicker
+ */
+
+
+function persian_datepicker_css_alter(&$css, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
+    $css['core/assets/vendor/jquery.ui/themes/base/datepicker.css']['data'] = drupal_get_path('module', 'persian_datepicker') . '/assets/style/persiandatepicker.css';
+
+}
+
+function persian_datepicker_js_alter(&$javascript, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
+  // Swap out jQuery to use an updated version of the library.
+	// var_dump($javascript);
+	// exit;
+
+	// unset($javascript['core/assets/vendor/jquery.ui/ui/datepicker-min.js']);
+
+	// var_dump( $javascript['core/assets/vendor/jquery.ui/ui/datepicker-min.js']);
+
+	// exit;
+
+    $javascript['core/assets/vendor/jquery.ui/ui/datepicker-min.js']['data'] = drupal_get_path('module', 'persian_datepicker') . '/assets/js/persiandatepicker.min.js';
+
+    $javascript['core/misc/date.js']['data'] = drupal_get_path('module', 'persian_datepicker') . '/assets/js/date.js';
+    $javascript['core/modules/locale/locale.datepicker.js']['data'] = drupal_get_path('module', 'persian_datepicker') . '/assets/js/persiandate.js';
+
+
+}
+
+function persian_datepicker_form_alter(&$form,$formState) {
+
+// var_dump($formState->getInput('field_date'));
+  // var_dump(get_class_methods($formState));
+  // var_dump($node->toArray());
+  // $node->field_date = '2015-01-02';
+}
+function persian_datepicker_node_presave($node) {
+  // var_dump(get_class_methods($node));
+  // var_dump($node->toArray());
+  // $node->field_date = '2015-01-02';
+}

@@ -1,0 +1,8 @@
+name: 'Persian Datepicker'
+type: module
+description: 'Override default drupal8 Datepicker to show a shamsi datepicker instead.'
+package: 'Sina Drupal'
+version: '8.x-1.0-beta1'
+core: '8.x'
+project: 'persian_datepicker'
+datestamp: 1445188441
